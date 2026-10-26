@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Absensi Kelas 3 SD Negeri 1 Barabai Timur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+  :root{
+    --bg:#1E1E1E;
+    --surface:#252526;
+    --ink:#D4D4D4;
+    --muted:#858585;
+    --line:#3C3C3C;
+    --primary:#4FC1FF;
+    --primary-light:#1F3A4D;
+    --hadir:#4EC9B0;
+    --izin:#569CD6;
+    --sakit:#CE9178;
+    --alpa:#F14C4C;
+    --btn-primary-bg:#0E639C;
+    --badge-muted:#555;
+    --input-bg:#1E1E1E;
+  }
+  body.theme-light{
+    --bg:#F3F5FB;
+    --surface:#FFFFFF;
+    --ink:#2E3A59;
+    --muted:#8A94A6;
+    --line:#E7EAF3;
+    --primary:#4A56E2;
+    --primary-light:#EEF2FF;
+    --hadir:#22B573;
+    --izin:#4A90E2;
+    --sakit:#F5A623;
+    --alpa:#EB5757;
+    --btn-primary-bg:#4A56E2;
+    --badge-muted:#B7BECC;
+    --input-bg:#FBFCFE;
+  }
+  body.theme-light .icon-dot.green{ background:#DFF7E8; }
+  body.theme-light .icon-dot.orange{ background:#FFF1DE; }
+  body.theme-light .icon-dot.blue{ background:#E3EEFF; }
+  body.theme-light .icon-dot.pink{ background:#FFE6F0; }
+  body.theme-light .icon-dot.teal{ background:#DFFAF7; }
+  body.theme-light .icon-dot.gray{ background:#EEF1F5; }
+  body.theme-light .cam-error{ background:#FDECEC; border-color:#F6C6C6; color:#B33939; }
+  body.theme-light .dot{ background:#D7DCE6; color:#fff; }
+  body.theme-light .manual-grid button.done{ background:#F0F2F8; }
+  body.theme-light .sidebar-profile .avatar{ border-color:#CBD5E1; color:#64748B; }
+  body.theme-pastel{
+    --bg:#FFF6FB;
+    --surface:#FFFFFF;
+    --ink:#5B4B66;
+    --muted:#B79CC2;
+    --line:#F3D9EC;
+    --primary:#C9639B;
+    --primary-light:#FDE8F3;
+    --hadir:#6FCF97;
+    --izin:#8EC5FC;
+    --sakit:#FFC26F;
+    --alpa:#FF8FA3;
+    --btn-primary-bg:#C9639B;
+    --badge-muted:#E3C9DC;
+    --input-bg:#FFFBFD;
+  }
+  body.theme-pastel .icon-dot.green{ background:#DDF6E7; }
+  body.theme-pastel .icon-dot.orange{ background:#FFEBD1; }
+  body.theme-pastel .icon-dot.blue{ background:#E1F0FF; }
+  body.theme-pastel .icon-dot.pink{ background:#FFE0EE; }
+  body.theme-pastel .icon-dot.teal{ background:#DFFAF3; }
+  body.theme-pastel .icon-dot.gray{ background:#F6EFF5; }
+  body.theme-pastel .cam-error{ background:#FFE6EC; border-color:#FFC2D3; color:#B3456A; }
+  body.theme-pastel .dot{ background:#F3D9EC; color:#fff; }
+  body.theme-pastel .manual-grid button.done{ background:#FBEFF6; }
+  body.theme-pastel .sidebar-profile .avatar{ border-color:#F3D9EC; color:#B79CC2; }
+
+  body.theme-modern{
+    --bg:#F0F4F2;
+    --surface:#FFFFFF;
+    --ink:#1F2A28;
+    --muted:#6B7A76;
+    --line:#E2E9E6;
+    --primary:#0F7A5E;
+    --primary-light:#E3F5EE;
+    --hadir:#16A34A;
+    --izin:#2563EB;
+    --sakit:#F59E0B;
+    --alpa:#DC2626;
+    --btn-primary-bg:#0F7A5E;
+    --badge-muted:#B9C4C0;
+    --input-bg:#F7FAF9;
+  }
+  body.theme-modern .topbar{
+    background:linear-gradient(120deg,#0B4F3F,#0F7A5E 60%,#149672);
+    box-shadow:0 3px 14px rgba(15,122,94,.25);
+  }
+  body.theme-modern .topbar-title{ color:#fff; }
+  body.theme-modern .topbar-clock{ color:rgba(255,255,255,.85); }
+  body.theme-modern .menu-btn{ background:rgba(255,255,255,.18); color:#fff; }
+  body.theme-modern .card{ border-radius:14px; box-shadow:0 2px 12px rgba(15,42,40,.06); border:1px solid var(--line); }
+  body.theme-modern .side-item.active{ background:var(--primary-light); color:var(--primary); }
+  body.theme-modern .icon-dot.green{ background:#DCF5E8; }
+  body.theme-modern .icon-dot.orange{ background:#FFF1DC; }
+  body.theme-modern .icon-dot.blue{ background:#DCE9FF; }
+  body.theme-modern .icon-dot.pink{ background:#FFE0E5; }
+  body.theme-modern .icon-dot.teal{ background:#D9F5EF; }
+  body.theme-modern .icon-dot.gray{ background:#EEF2F1; }
+  body.theme-modern .sidebar-profile .avatar{ border-color:#CFE3DC; color:#0F7A5E; }
+  body.theme-modern .stat-card, body.theme-modern .sum-chip{ border-radius:12px; box-shadow:0 3px 10px rgba(15,42,40,.10); }
+  .theme-btn.inactive{ opacity:.45; }
+  .chip-row{ display:flex; flex-wrap:wrap; gap:8px; margin:12px 0; }
+  .chip-btn{ border:1px solid var(--line); background:var(--bg); color:var(--ink); border-radius:999px; padding:7px 14px; font-size:12.5px; cursor:pointer; }
+  .scan-zone-slot:empty{ display:none; }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'JetBrains Mono',monospace; -webkit-font-smoothing:antialiased; font-size:16px;
+  }
+  h1,h2,h3{ font-family:'JetBrains Mono',monospace; font-weight:700; margin:0; }
+  button, input{ font-family:'JetBrains Mono',monospace; }
+
+  /* ---------- Topbar ---------- */
+  .topbar{
+    position:fixed; top:0; left:0; right:0; height:64px; background:var(--surface);
+    box-shadow:0 2px 10px rgba(46,58,89,.06); display:flex; align-items:center; gap:12px;
+    padding:0 16px; z-index:40;
+  }
+  .menu-btn{
+    width:44px; height:44px; border-radius:10px; border:none; background:var(--primary-light);
+    color:var(--primary); font-size:20px; cursor:pointer;
+  }
+  .topbar-title{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:17px; color:var(--primary); flex:1; }
+  .topbar-clock{ font-size:14px; color:var(--muted); font-weight:700; }
+
+  /* ---------- Sidebar ---------- */
+  .sidebar-overlay{
+    position:fixed; inset:0; background:rgba(30,38,60,.45); display:none; z-index:45;
+  }
+  .sidebar-overlay.show{ display:block; }
+  .sidebar{
+    position:fixed; top:0; left:0; bottom:0; width:300px; background:var(--surface);
+    transform:translateX(-100%); transition:transform .2s ease; z-index:46; overflow-y:auto;
+    box-shadow:4px 0 24px rgba(0,0,0,.12);
+  }
+  .sidebar.open{ transform:translateX(0); }
+  .sidebar-profile{ text-align:center; padding:30px 16px 18px; border-bottom:1px solid var(--line); }
+  .sidebar-profile .avatar{
+    width:72px; height:72px; border-radius:50%; border:2px solid #4A4A4A; display:flex;
+    align-items:center; justify-content:center; font-size:30px; color:var(--muted); margin:0 auto 10px;
+  }
+  .sidebar-profile .pname{ font-weight:700; font-size:15px; }
+  .sidebar-profile .prole{ font-size:12.5px; color:var(--muted); margin-top:2px; }
+  .sidebar-menu{ padding:12px; display:flex; flex-direction:column; gap:3px; }
+  .side-item{
+    display:flex; align-items:center; gap:14px; width:100%; text-align:left; border:none; background:none;
+    padding:13px 14px; font-size:15px; color:var(--ink); cursor:pointer; border-radius:10px; font-weight:600;
+  }
+  .side-item.active{ background:var(--primary-light); color:var(--primary); }
+  .icon-dot{
+    width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center;
+    font-size:17px; flex-shrink:0;
+  }
+  .icon-dot.green{ background:rgba(78,201,176,.18); }
+  .icon-dot.orange{ background:rgba(206,145,120,.18); }
+  .icon-dot.blue{ background:rgba(86,156,214,.18); }
+  .icon-dot.pink{ background:rgba(197,134,192,.18); }
+  .icon-dot.teal{ background:rgba(78,201,176,.18); }
+  .icon-dot.gray{ background:rgba(255,255,255,.06); }
+  .sidebar-footer{ padding:14px 18px 20px; font-size:10.5px; color:var(--muted); text-align:center; }
+
+  /* ---------- Content ---------- */
+  .content{ padding:80px 20px 44px; max-width:820px; margin:0 auto; }
+  .panel{ display:none; }
+  .panel.active{ display:block; }
+  .card{ background:var(--surface); border-radius:16px; padding:22px; box-shadow:0 2px 10px rgba(46,58,89,.05); }
+  .section-title{ font-size:18px; margin-bottom:14px; }
+
+  /* ---------- Home ---------- */
+  .home-greeting{
+    margin-bottom:18px; text-align:center; border:1.5px solid var(--line); border-radius:14px;
+    padding:16px 14px; background:var(--surface);
+  }
+  .home-greeting .school{ font-size:13px; color:var(--muted); font-weight:700; }
+  .home-greeting h1{ font-size:25px; color:var(--primary); margin-top:4px; }
+  .home-greeting .date{ font-size:15px; color:var(--ink); font-weight:700; margin-top:8px; display:block; }
+  .stat-grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:16px; }
+  .stat-card{ border-radius:14px; padding:18px; color:#fff; }
+
+  .pie3d-wrap{ display:flex; flex-direction:column; align-items:center; gap:18px; padding:8px 0 4px; }
+  .pie3d-stage{ padding-top:14px; }
+  .pie3d{
+    width:190px; height:190px; border-radius:50%;
+    transform:rotateX(55deg);
+    box-shadow: 0 22px 0 -6px rgba(0,0,0,.16), 0 30px 22px rgba(0,0,0,.22);
+    transition:background .4s ease;
+  }
+  .pie3d-empty{ display:flex; align-items:center; justify-content:center; color:#fff; font-size:12px; text-align:center; padding:0 20px; height:100%; }
+  .pie3d-legend{ display:flex; flex-wrap:wrap; gap:10px 16px; justify-content:center; }
+  .pie3d-legend-item{ display:flex; align-items:center; gap:7px; font-size:12.5px; color:var(--muted); font-weight:600; }
+  .pie3d-legend-dot{ width:11px; height:11px; border-radius:3px; flex-shrink:0; }
+  .stat-card .n{ font-family:'JetBrains Mono',monospace; font-size:30px; font-weight:700; display:block; }
+  .stat-card .l{ font-size:13px; opacity:.9; margin-top:4px; }
+
+  /* ---------- Calendar ---------- */
+  .cal-header{ display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
+  .cal-nav{ width:36px; height:36px; border-radius:9px; border:none; background:var(--primary-light); color:var(--primary); font-size:17px; cursor:pointer; }
+  .cal-weekdays{ display:grid; grid-template-columns:repeat(7,1fr); text-align:center; font-size:12px; color:var(--muted); margin-bottom:6px; }
+  .cal-grid{ display:grid; grid-template-columns:repeat(7,1fr); gap:5px; }
+  .cal-cell{ aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:9px; font-size:13.5px; position:relative; color:var(--ink); }
+  .cal-cell.empty{ visibility:hidden; }
+  .cal-cell.weekend{ color:var(--alpa); }
+  .cal-cell.holiday{ background:rgba(241,76,76,.16); color:var(--alpa); font-weight:700; }
+  .cal-cell.today{ border:2px solid var(--primary); font-weight:700; }
+  .cal-dot{ width:5px; height:5px; border-radius:50%; background:var(--hadir); position:absolute; bottom:5px; }
+  .cal-legend{ display:flex; gap:14px; font-size:12px; color:var(--muted); margin-top:12px; flex-wrap:wrap; }
+  .dotleg{ display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:4px; }
+  .dotleg.red{ background:var(--alpa); }
+  .dotleg.blue{ background:var(--primary); }
+  .dotleg.green{ background:var(--hadir); }
+
+  /* ---------- Scan tab ---------- */
+  #reader, #readerKeluar{ width:100%; border-radius:14px; overflow:hidden; background:#101828; min-height:320px; }
+  @keyframes scanFlash{
+    0%{ box-shadow:0 0 0 0 rgba(78,201,176,0); }
+    25%{ box-shadow:0 0 0 8px rgba(78,201,176,.9); }
+    100%{ box-shadow:0 0 0 0 rgba(78,201,176,0); }
+  }
+  #reader.flash, #readerKeluar.flash{ animation:scanFlash .6s ease-out; }
+  .scan-hint{ text-align:center; font-size:14.5px; color:var(--muted); margin-top:12px; }
+  .cam-error{
+    display:none; background:#3A2323; border:1px solid #5A3434; color:#F1A9A0; border-radius:12px;
+    padding:14px 16px; font-size:14px; margin-top:12px;
+  }
+  .progress-row{ display:flex; align-items:center; justify-content:space-between; margin:20px 0 12px; }
+  .progress-row .count{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:16px; color:var(--primary); }
+  .dots{ display:flex; flex-wrap:wrap; gap:8px; }
+  .dot{
+    width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    font-size:11.5px; font-weight:700; color:var(--muted); background:#333; border:2px solid transparent;
+  }
+  .manual-toggle{
+    width:100%; margin-top:18px; background:none; border:1.5px dashed var(--line); color:var(--muted);
+    border-radius:12px; padding:13px; font-weight:700; font-size:14.5px; cursor:pointer;
+  }
+  .manual-grid{ display:none; grid-template-columns:1fr 1fr; gap:10px; margin-top:14px; }
+  .manual-grid button{
+    text-align:left; padding:13px 14px; border-radius:12px; border:1px solid var(--line); background:var(--surface);
+    font-size:14px; color:var(--ink); cursor:pointer;
+  }
+  .manual-grid button.done{ background:#333; color:var(--muted); }
+
+  /* ---------- Confirm overlay ---------- */
+  .overlay{ position:fixed; inset:0; background:rgba(30,38,60,.5); display:none; align-items:flex-end; justify-content:center; z-index:50; }
+  .overlay.show{ display:flex; }
+  .sheet{ background:var(--surface); width:100%; max-width:640px; border-radius:22px 22px 0 0; padding:22px 18px 26px; }
+  .sheet .name{ font-family:'JetBrains Mono',monospace; font-size:18px; color:var(--primary); margin-bottom:2px; }
+  .sheet .current{ font-size:12.5px; color:var(--muted); margin-bottom:16px; }
+  .status-grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .status-btn{ border:none; border-radius:14px; padding:19px 10px; color:#fff; font-family:'JetBrains Mono',monospace; font-size:17px; font-weight:700; cursor:pointer; }
+  .status-btn.hadir{ background:var(--hadir); }
+  .status-btn.izin{ background:var(--izin); }
+  .status-btn.sakit{ background:var(--sakit); }
+  .status-btn.alpa{ background:var(--alpa); }
+  .sheet .cancel{ width:100%; margin-top:14px; background:none; border:none; color:var(--muted); font-size:13px; padding:8px; cursor:pointer; }
+
+  .toast{
+    position:fixed; left:50%; bottom:24px; transform:translateX(-50%) translateY(10px); background:#111827;
+    color:#fff; padding:10px 18px; border-radius:999px; font-size:13px; opacity:0; transition:.25s ease; z-index:60;
+  }
+  .toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+
+  /* ---------- Buttons ---------- */
+  .btn-primary{
+    background:var(--btn-primary-bg); border:none; color:#fff; font-weight:700; font-size:15px;
+    padding:13px 18px; border-radius:8px; cursor:pointer;
+  }
+  .btn-danger{ background:rgba(241,76,76,.15); border:none; color:#F14C4C; font-weight:700; font-size:13px; padding:8px 14px; border-radius:8px; cursor:pointer; }
+  input.text-input{
+    width:100%; padding:13px 14px; border:1.5px solid var(--line); border-radius:8px; font-size:15px;
+    background:var(--input-bg); color:var(--ink); margin-bottom:12px;
+  }
+
+  /* ---------- QR tab ---------- */
+  .qr-toolbar{ display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; gap:10px; }
+  .qr-toolbar p{ font-size:12.5px; color:var(--muted); margin:0; }
+  .qr-grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .qr-card{ background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:14px; text-align:center; }
+  .qr-card .qbox{ display:flex; justify-content:center; margin-bottom:10px; }
+  .qr-card .sname{ font-size:13px; font-weight:700; line-height:1.3; }
+  .qr-card .snum{ font-size:11.5px; color:var(--muted); margin-top:3px; }
+
+  /* ---------- Recap tab ---------- */
+  .recap-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; gap:10px; }
+  .recap-head input[type=date], .recap-head input[type=month]{
+    border:1.5px solid var(--line); border-radius:8px; padding:10px 12px; font-size:14.5px;
+    background:var(--input-bg); color:var(--ink);
+  }
+  .summary-row{ display:flex; gap:10px; margin-bottom:18px; flex-wrap:wrap; }
+  .sum-chip{ flex:1; min-width:70px; border-radius:12px; padding:12px 8px; text-align:center; color:#fff; }
+  .sum-chip .n{ font-family:'JetBrains Mono',monospace; font-size:21px; font-weight:700; display:block; }
+  .sum-chip .l{ font-size:12px; opacity:.9; }
+  table.recap{ width:100%; border-collapse:collapse; }
+  table.recap th{ text-align:left; font-size:12.5px; color:var(--muted); padding:8px 5px; border-bottom:1px solid var(--line); }
+  table.recap td{ padding:11px 5px; font-size:14.5px; border-bottom:1px dashed var(--line); }
+  .badge{ padding:4px 11px; border-radius:999px; font-size:12.5px; color:#fff; font-weight:700; }
+
+  /* ---------- Siswa tab ---------- */
+  .student-row{
+    display:flex; align-items:center; justify-content:space-between; padding:12px 4px;
+    border-bottom:1px dashed var(--line); font-size:15px;
+  }
+  .student-row .sidx{ color:var(--muted); width:28px; flex-shrink:0; }
+  .student-row .sname{ flex:1; }
+
+  /* ---------- About ---------- */
+  .about-card{ text-align:center; padding:32px 20px; }
+  .about-card .appname{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:19px; color:var(--primary); }
+  .about-card .credit{ margin-top:16px; font-size:15px; color:var(--ink); font-weight:700; }
+  .about-card .credit-role{ font-size:13px; color:var(--muted); }
+
+  @media print{
+    body *{ visibility:hidden; }
+    #qrPrintArea, #qrPrintArea *{ visibility:visible; }
+    #qrPrintArea{ position:absolute; top:0; left:0; width:100%; display:block !important; padding:20px; background:#fff; }
+    .qr-card{ background:#fff !important; }
+    .qr-grid{ grid-template-columns:1fr 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <button class="menu-btn" id="menuBtn">☰</button>
+  <div class="topbar-title">Absensi Kelas 3</div>
+  <div class="topbar-clock" id="clockLabel"></div>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-profile">
+    <div class="avatar">👤</div>
+    <div class="pname">Akhmad Fitra Harry, S.Pd</div>
+    <div class="prole">Wali Kelas 3</div>
+  </div>
+  <nav class="sidebar-menu">
+    <button data-tab="home" class="side-item active"><span class="icon-dot green">🏠</span>Beranda</button>
+    <button data-tab="scan" class="side-item"><span class="icon-dot orange">📷</span>Scan Absen</button>
+    <button data-tab="keluar" class="side-item"><span class="icon-dot blue">🚪</span>Keluar Kelas</button>
+    <button data-tab="qr" class="side-item"><span class="icon-dot blue">🔗</span>Kartu QR</button>
+    <button data-tab="siswa" class="side-item"><span class="icon-dot pink">👥</span>Data Siswa</button>
+    <button data-tab="recap" class="side-item"><span class="icon-dot teal">📅</span>Rekap Harian</button>
+    <button data-tab="monthly" class="side-item"><span class="icon-dot teal">🗓️</span>Rekap Bulanan</button>
+    <button data-tab="settings" class="side-item"><span class="icon-dot gray">⚙️</span>Pengaturan</button>
+    <button data-tab="about" class="side-item"><span class="icon-dot gray">ℹ️</span>Tentang</button>
+  </nav>
+  <div class="sidebar-footer">Absensi Kelas 3 SDN 1 Barabai Timur</div>
+</aside>
+
+<div class="content">
+
+  <!-- HOME -->
+  <section class="panel active" id="panel-home">
+    <div class="home-greeting">
+      <span class="school">SD Negeri 1 Barabai Timur</span>
+      <h1>Selamat datang, Bapak Fitra 👋</h1>
+      <span class="date" id="todayLabel"></span>
+    </div>
+
+    <div class="stat-grid" id="homeStats"></div>
+
+    <div class="card" style="margin-top:16px;">
+      <h3 class="section-title">Grafik Kehadiran Hari Ini</h3>
+      <div class="pie3d-wrap">
+        <div class="pie3d-stage"><div class="pie3d" id="attendancePie3d"></div></div>
+        <div class="pie3d-legend" id="attendancePieLegend"></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <h3 class="section-title">Cuaca & Kualitas Udara — Barabai</h3>
+      <div class="stat-grid" id="weatherWidget">
+        <div class="stat-card" style="background:var(--muted); grid-column:1/-1;"><span class="l">Memuat data cuaca...</span></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <div class="cal-header">
+        <button class="cal-nav" id="calPrev">‹</button>
+        <h3 id="calTitle"></h3>
+        <button class="cal-nav" id="calNext">›</button>
+      </div>
+      <div class="cal-weekdays">
+        <span>Min</span><span>Sen</span><span>Sel</span><span>Rab</span><span>Kam</span><span>Jum</span><span>Sab</span>
+      </div>
+      <div class="cal-grid" id="calGrid"></div>
+      <div class="cal-legend">
+        <span><i class="dotleg red"></i>Tanggal merah</span>
+        <span><i class="dotleg blue"></i>Hari ini</span>
+        <span><i class="dotleg green"></i>Sudah diabsen</span>
+      </div>
+      <div id="calHolidayList" style="margin-top:12px; font-size:13px; color:var(--muted); line-height:1.6;"></div>
+    </div>
+
+    <p style="text-align:center; font-size:12.5px; color:var(--muted); margin-top:20px;">Dibuat oleh Akhmad Fitra Harry, S.Pd</p>
+  </section>
+
+  <!-- SCAN TAB (Absensi) -->
+  <section class="panel" id="panel-scan">
+    <div class="scan-zone-slot" id="scanSlot-absensi">
+      <div id="scanZone">
+        <div class="card">
+          <div id="reader"></div>
+          <p class="scan-hint" id="scanZoneHint">Arahkan kamera ke kartu QR siswa — otomatis tercatat Hadir</p>
+          <div class="cam-error" id="camError">
+            <p id="camErrorMsg">Kamera tidak bisa diakses.</p>
+            <button class="btn-primary" id="retryCamBtn" style="margin-top:8px;">Coba Lagi</button>
+          </div>
+          <div style="display:flex; gap:8px; margin-top:12px; flex-wrap:wrap;">
+            <button class="btn-primary" id="camToggleBtn" style="flex:1; min-width:120px;">Matikan Kamera</button>
+            <button class="btn-primary" id="hwToggleBtn" style="flex:1; min-width:120px; background:#555;">Matikan Scanner Fisik</button>
+          </div>
+          <label style="font-size:12.5px; color:var(--muted); display:block; margin:14px 0 6px;">Atau scan dengan alat Barcode Scanner (USB/Bluetooth, mis. Omni 2D)</label>
+          <input type="text" id="hwScanInput" class="text-input" placeholder="Klik di sini lalu scan kartu dengan alat..." autocomplete="off" style="margin-bottom:0;">
+        </div>
+      </div>
+    </div>
+    <div class="progress-row"><span class="count" id="progressCount">0 / 0 sudah diabsen</span></div>
+    <div class="dots" id="progressDots"></div>
+    <button class="manual-toggle" id="manualToggle">Ubah status / isi manual (Izin, Sakit, Alpa)</button>
+    <div class="manual-grid" id="manualGrid"></div>
+  </section>
+
+  <!-- KELUAR KELAS TAB (kamera terpisah, tidak berbagi apa pun dengan Scan Absen) -->
+  <section class="panel" id="panel-keluar">
+    <div class="card">
+      <div id="readerKeluar"></div>
+      <p class="scan-hint">Arahkan kamera ke kartu QR siswa untuk mencatat izin keluar kelas</p>
+      <div class="cam-error" id="camErrorKeluar">
+        <p id="camErrorMsgKeluar">Kamera tidak bisa diakses.</p>
+        <button class="btn-primary" id="retryCamBtnKeluar" style="margin-top:8px;">Coba Lagi</button>
+      </div>
+      <label style="font-size:12.5px; color:var(--muted); display:block; margin:14px 0 6px;">Atau scan dengan alat Barcode Scanner (USB/Bluetooth, mis. Omni 2D)</label>
+      <input type="text" id="hwScanInputKeluar" class="text-input" placeholder="Klik di sini lalu scan kartu dengan alat..." autocomplete="off" style="margin-bottom:0;">
+    </div>
+    <div class="card" style="margin-top:14px;">
+      <h3 class="section-title">Catat Manual</h3>
+      <select id="manualSelect-keluar" class="text-input"></select>
+      <button class="btn-primary" id="manualBtn-keluar" style="width:100%;">Catat Keluar Kelas</button>
+    </div>
+    <div class="card" style="margin-top:14px;">
+      <h3 class="section-title">Riwayat Hari Ini</h3>
+      <table class="recap">
+        <thead><tr><th>Waktu</th><th>Nama</th><th>Keterangan</th><th>Aksi</th></tr></thead>
+        <tbody id="logBody-keluar"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- QR TAB -->
+  <section class="panel" id="panel-qr">
+    <div class="qr-toolbar">
+      <p>Cetak lalu bagikan/laminating satu kartu untuk tiap siswa.</p>
+      <button class="btn-primary" id="printBtn">Cetak semua</button>
+    </div>
+    <div class="qr-grid" id="qrGrid"></div>
+    <div id="qrPrintArea" style="display:none;">
+      <h2 style="margin-bottom:12px;">Kartu QR — Kelas 3 SD Negeri 1 Barabai Timur</h2>
+      <div class="qr-grid" id="qrGridPrint"></div>
+    </div>
+  </section>
+
+  <!-- SISWA TAB -->
+  <section class="panel" id="panel-siswa">
+    <div class="card" style="margin-bottom:14px;">
+      <h3 class="section-title">Tambah Siswa</h3>
+      <input type="text" id="newStudentName" class="text-input" placeholder="Nama siswa baru">
+      <button class="btn-primary" id="addStudentBtn" style="width:100%;">Tambah Siswa</button>
+    </div>
+    <div class="card">
+      <h3 class="section-title">Daftar Siswa (<span id="studentCount">0</span>)</h3>
+      <div id="studentListManage"></div>
+    </div>
+  </section>
+
+  <!-- RECAP TAB -->
+  <section class="panel" id="panel-recap">
+    <div class="recap-head">
+      <h3>Rekap harian</h3>
+      <input type="date" id="recapDate">
+    </div>
+    <button class="btn-primary" id="downloadDailyBtn" style="margin-bottom:14px;">Unduh rekap (CSV)</button>
+    <div class="summary-row" id="summaryRow"></div>
+    <table class="recap">
+      <thead><tr><th>No</th><th>Nama</th><th>Status</th><th>Waktu</th></tr></thead>
+      <tbody id="recapBody"></tbody>
+    </table>
+  </section>
+
+  <!-- MONTHLY RECAP TAB -->
+  <section class="panel" id="panel-monthly">
+    <div class="recap-head">
+      <h3>Rekap bulanan</h3>
+      <input type="month" id="monthlyDate">
+    </div>
+    <p class="scan-hint" id="monthlyMeta" style="text-align:left; margin:-6px 0 14px;"></p>
+    <button class="btn-primary" id="downloadMonthlyBtn" style="margin-bottom:14px;">Unduh rekap (CSV)</button>
+    <div class="summary-row" id="monthlySummaryRow"></div>
+    <table class="recap">
+      <thead><tr><th>No</th><th>Nama</th><th>Hadir</th><th>Izin</th><th>Sakit</th><th>Alpa</th></tr></thead>
+      <tbody id="monthlyBody"></tbody>
+    </table>
+  </section>
+
+  <!-- SETTINGS TAB -->
+  <section class="panel" id="panel-settings">
+    <div class="card" style="margin-bottom:14px;">
+      <h3 class="section-title">Logo Aplikasi</h3>
+      <div style="text-align:center; margin-bottom:12px;">
+        <img id="logoPreview" style="display:none; width:72px; height:72px; border-radius:50%; object-fit:cover; border:2px solid var(--line);">
+      </div>
+      <input type="file" id="logoFileInput" accept="image/*" class="text-input">
+      <button class="btn-primary" id="resetLogoBtn" style="width:100%; background:#555;">Pakai Logo Default</button>
+    </div>
+    <div class="card" style="margin-bottom:14px;">
+      <h3 class="section-title">Tema Tampilan</h3>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <button class="btn-primary theme-btn" id="themeDarkBtn" style="flex:1; min-width:110px;">Gelap (VS Code)</button>
+        <button class="btn-primary theme-btn" id="themeLightBtn" style="flex:1; min-width:110px;">Cerah</button>
+        <button class="btn-primary theme-btn" id="themePastelBtn" style="flex:1; min-width:110px;">Pastel Ceria</button>
+        <button class="btn-primary theme-btn" id="themeModernBtn" style="flex:1; min-width:110px;">Modern Hijau</button>
+      </div>
+    </div>
+    <div class="card">
+      <h3 class="section-title">Hubungkan ke Google Sheets</h3>
+      <p class="scan-hint" style="text-align:left; margin:0 0 14px;">Tempel URL Web App (diakhiri /exec) dari Apps Script di sini agar absen tersimpan online dan bisa diakses dari perangkat lain.</p>
+      <input type="text" id="sheetsUrlInput" class="text-input" placeholder="https://script.google.com/macros/s/.../exec">
+      <button class="btn-primary" id="saveSheetsUrlBtn" style="width:100%;">Simpan & Hubungkan</button>
+      <p class="scan-hint" id="sheetsStatus" style="text-align:left; margin-top:12px;"></p>
+    </div>
+  </section>
+
+  <!-- ABOUT TAB -->
+  <section class="panel" id="panel-about">
+    <div class="card about-card">
+      <div class="appname">Absensi Online — Kelas 3</div>
+      <p style="font-size:12.5px; color:var(--muted); margin-top:8px;">SD Negeri 1 Barabai Timur</p>
+      <p style="font-size:12.5px; color:var(--muted); margin-top:14px;">Scan QR, catat kehadiran, dan lihat rekap harian/bulanan secara otomatis — tersimpan di perangkat dan Google Sheets.</p>
+      <div class="credit">Dibuat oleh Akhmad Fitra Harry, S.Pd</div>
+      <div class="credit-role">Wali Kelas 3</div>
+    </div>
+  </section>
+
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="sheet">
+    <div class="name" id="sheetName">Nama Siswa</div>
+    <div class="current" id="sheetCurrent"></div>
+    <div class="status-grid">
+      <button class="status-btn hadir" data-status="hadir">Hadir</button>
+      <button class="status-btn izin" data-status="izin">Izin</button>
+      <button class="status-btn sakit" data-status="sakit">Sakit</button>
+      <button class="status-btn alpa" data-status="alpa">Alpa</button>
+    </div>
+    <button class="cancel" id="sheetCancel">Batal</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<div class="overlay" id="logOverlay">
+  <div class="sheet">
+    <div class="name" id="logSheetName">Nama Siswa</div>
+    <div class="current" id="logSheetMode"></div>
+    <div class="chip-row" id="logPresetChips"></div>
+    <textarea id="logNoteInput" class="text-input" placeholder="Tulis keterangan..." style="min-height:80px; resize:vertical;"></textarea>
+    <button class="btn-primary" id="logSaveBtn" style="width:100%;">Simpan</button>
+    <button class="cancel" id="logCancelBtn">Batal</button>
+  </div>
+</div>
+
+<script>
+window.addEventListener("error", (e)=>{
+  console.error("Error tidak tertangani:", e.error || e.message);
+});
+try {
+const CODE_PREFIX = "ABSEN3SDN1BT-";
+const DEFAULT_STUDENT_NAMES = [
+  "Ahmad Bilal Al Jamil","Arsyla Romeesa","Azkia Syifa Riannur","Fairuz Nasyita Ramadhani",
+  "Kaisya Dwinda","Muhammad Azril","Muhammad Azzam Kholid","Muhammad Hakan Arroya",
+  "Muhammad Mujadid Fikri","Muhammad Rafa Reynandra","Muhammad Rakha Raffasya",
+  "Muhammad Rayyan Abid Al Ghani","Muhammad Ren Ryuken","Muhammad Rizqi Maulana",
+  "Muhammad Zian Ramadhan","Nadira Almeera Rusadi","Nor Akila Salsabella","Nor Khalisyah",
+  "Raisa Humairah Hifziah","Raisya Dilya Purnama","Raqilla Athafariz Syakiel",
+  "Salsabila Azzahra","Shanayya Adreena Mysha"
+];
+
+const STATUS = {
+  hadir:{ label:"Hadir" }, izin:{ label:"Izin" }, sakit:{ label:"Sakit" }, alpa:{ label:"Alpa" }
+};
+const STATUS_HEX = { hadir:"#4EC9B0", izin:"#569CD6", sakit:"#CE9178", alpa:"#F14C4C" };
+
+// ---------- kalender & tanggal merah 2026 (SKB 3 Menteri) ----------
+const HOLIDAYS_2026 = {
+  "2026-01-01":"Tahun Baru Masehi",
+  "2026-01-16":"Isra Mi'raj Nabi Muhammad SAW",
+  "2026-02-16":"Cuti Bersama Imlek",
+  "2026-02-17":"Tahun Baru Imlek 2577 Kongzili",
+  "2026-03-18":"Cuti Bersama Nyepi",
+  "2026-03-19":"Hari Suci Nyepi (Tahun Baru Saka 1948)",
+  "2026-03-20":"Cuti Bersama Idul Fitri",
+  "2026-03-21":"Idul Fitri 1447 H",
+  "2026-03-22":"Idul Fitri 1447 H",
+  "2026-03-23":"Cuti Bersama Idul Fitri",
+  "2026-03-24":"Cuti Bersama Idul Fitri",
+  "2026-04-03":"Wafat Yesus Kristus",
+  "2026-04-05":"Kebangkitan Yesus Kristus (Paskah)",
+  "2026-05-01":"Hari Buruh Internasional",
+  "2026-05-14":"Kenaikan Yesus Kristus",
+  "2026-05-15":"Cuti Bersama Kenaikan Yesus Kristus",
+  "2026-05-27":"Idul Adha 1447 H",
+  "2026-05-28":"Cuti Bersama Idul Adha",
+  "2026-05-31":"Hari Raya Waisak 2570 BE",
+  "2026-06-01":"Hari Lahir Pancasila",
+  "2026-06-16":"Tahun Baru Islam 1448 H",
+  "2026-08-17":"Proklamasi Kemerdekaan RI",
+  "2026-08-25":"Maulid Nabi Muhammad SAW",
+  "2026-12-24":"Cuti Bersama Natal",
+  "2026-12-25":"Kelahiran Yesus Kristus (Natal)"
+};
+const BULAN_NAMES = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+let calYear, calMonth;
+function initCalendar(){
+  const now = new Date();
+  calYear = now.getFullYear();
+  calMonth = now.getMonth();
+  renderCalendar();
+}
+function renderCalendar(){
+  const first = new Date(calYear, calMonth, 1);
+  const startDay = first.getDay();
+  const daysInMonth = new Date(calYear, calMonth+1, 0).getDate();
+  document.getElementById("calTitle").textContent = `${BULAN_NAMES[calMonth]} ${calYear}`;
+  const grid = document.getElementById("calGrid");
+  grid.innerHTML = "";
+  for(let i=0;i<startDay;i++){
+    const cell = document.createElement("div");
+    cell.className = "cal-cell empty";
+    grid.appendChild(cell);
+  }
+  const todayStr = todayKey();
+  const monthHolidays = [];
+  for(let d=1; d<=daysInMonth; d++){
+    const dateObj = new Date(calYear, calMonth, d);
+    const key = toDateKey(dateObj);
+    const cell = document.createElement("div");
+    cell.className = "cal-cell";
+    const dow = dateObj.getDay();
+    if(dow===0 || dow===6) cell.classList.add("weekend");
+    if(HOLIDAYS_2026[key]){
+      cell.classList.add("holiday");
+      cell.title = HOLIDAYS_2026[key];
+      monthHolidays.push(`🔴 ${d} ${BULAN_NAMES[calMonth]} — ${HOLIDAYS_2026[key]}`);
+    }
+    if(key === todayStr) cell.classList.add("today");
+    cell.innerHTML = `<span>${d}</span>`;
+    try{
+      if(localStorage.getItem(`absensi:${key}`)){
+        const dot = document.createElement("span");
+        dot.className = "cal-dot";
+        cell.appendChild(dot);
+      }
+    }catch(e){}
+    grid.appendChild(cell);
+  }
+  document.getElementById("calHolidayList").innerHTML = monthHolidays.length
+    ? monthHolidays.join("<br>")
+    : "Tidak ada tanggal merah bulan ini.";
+}
+document.getElementById("calPrev").addEventListener("click", ()=>{
+  calMonth--; if(calMonth<0){ calMonth=11; calYear--; }
+  renderCalendar();
+});
+document.getElementById("calNext").addEventListener("click", ()=>{
+  calMonth++; if(calMonth>11){ calMonth=0; calYear++; }
+  renderCalendar();
+});
+
+// ---------- roster (siswa) ----------
+function loadRoster(){
+  try{
+    const raw = localStorage.getItem("studentsRoster");
+    if(raw){ const parsed = JSON.parse(raw); if(Array.isArray(parsed) && parsed.length) return parsed; }
+  }catch(e){}
+  return DEFAULT_STUDENT_NAMES.map((name,i)=>({ id:i+1, name }));
+}
+function saveRoster(){
+  try{ localStorage.setItem("studentsRoster", JSON.stringify(STUDENTS)); }catch(e){}
+}
+function getNextId(){
+  try{
+    const raw = localStorage.getItem("nextStudentId");
+    if(raw) return parseInt(raw,10);
+  }catch(e){}
+  return (STUDENTS.reduce((m,s)=>Math.max(m,s.id),0)) + 1;
+}
+function setNextId(n){ try{ localStorage.setItem("nextStudentId", String(n)); }catch(e){} }
+
+let STUDENTS = loadRoster();
+
+function addStudent(name){
+  name = name.trim();
+  if(!name) return;
+  const id = getNextId();
+  STUDENTS.push({ id, name });
+  setNextId(id+1);
+  saveRoster();
+  afterRosterChange();
+}
+function deleteStudent(id){
+  STUDENTS = STUDENTS.filter(s=>s.id!==id);
+  saveRoster();
+  afterRosterChange();
+}
+function afterRosterChange(){
+  renderStudentManageList();
+  buildQrGrids();
+  renderProgress();
+  renderManualGrid();
+  populateManualSelect("keluar");
+}
+
+function relocateScanZone(){
+  const slot = document.getElementById("scanSlot-absensi");
+  const zone = document.getElementById("scanZone");
+  if(slot && zone && zone.parentElement !== slot) slot.appendChild(zone);
+}
+
+let activeStudentId = null;
+let html5Qrcode = null;
+let scannerStarted = false;
+let cameraManuallyStopped = false;
+let hwScanEnabled = true;
+let currentAttendance = {};
+
+let html5QrcodeKeluar = null;
+let keluarScannerStarted = false;
+let isStartingKeluarScanner = false;
+
+const KELUAR_CONFIG = {
+  label:"Keluar Kelas", jenis:"keluar",
+  presets:["Ke Toilet","Ke UKS","Ambil Barang","Membuang Sampah","Dipanggil Orang Tua","Lainnya"], requireNote:false
+};
+
+function pad(n){ return n<10 ? "0"+n : ""+n; }
+function toDateKey(d){ return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`; }
+function todayKey(){ return toDateKey(new Date()); }
+
+function formatIndoDate(d){
+  const hari = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
+  const bulan = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+  return `${hari[d.getDay()]}, ${d.getDate()} ${bulan[d.getMonth()]} ${d.getFullYear()}`;
+}
+function tickClock(){
+  const now = new Date();
+  const el = document.getElementById("clockLabel");
+  if(el) el.textContent = `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+}
+
+// ---------- sidebar ----------
+const sidebar = document.getElementById("sidebar");
+const sidebarOverlay = document.getElementById("sidebarOverlay");
+document.getElementById("menuBtn").addEventListener("click", ()=>{
+  sidebar.classList.add("open"); sidebarOverlay.classList.add("show");
+});
+sidebarOverlay.addEventListener("click", closeSidebar);
+function closeSidebar(){ sidebar.classList.remove("open"); sidebarOverlay.classList.remove("show"); }
+
+document.querySelectorAll(".side-item").forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    document.querySelectorAll(".side-item").forEach(b=>b.classList.remove("active"));
+    document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));
+    btn.classList.add("active");
+    document.getElementById(`panel-${btn.dataset.tab}`).classList.add("active");
+    closeSidebar();
+    if(btn.dataset.tab === "recap") renderRecap(document.getElementById("recapDate").value);
+    if(btn.dataset.tab === "monthly") renderMonthlyRecap(document.getElementById("monthlyDate").value);
+    if(btn.dataset.tab === "home") renderHome();
+    if(btn.dataset.tab === "siswa") renderStudentManageList();
+    if(btn.dataset.tab === "scan"){
+      stopKeluarScanner();
+      relocateScanZone();
+      autoStartScanner();
+      document.getElementById("hwScanInput").focus();
+    }else{
+      // Kamera Scan Absen hanya aktif saat tabnya sendiri terbuka, membebaskan kamera untuk tab lain.
+      if(scannerStarted) stopScanner();
+    }
+    if(btn.dataset.tab === "keluar"){
+      populateManualSelect("keluar");
+      renderLogToday("keluar");
+      startKeluarScanner();
+      document.getElementById("hwScanInputKeluar").focus();
+    }else{
+      if(keluarScannerStarted) stopKeluarScanner();
+    }
+  });
+});
+
+// ---------- Google Sheets sync ----------
+function getSheetsUrl(){ try{ return localStorage.getItem("sheetsUrl") || ""; }catch(e){ return ""; } }
+function setSheetsUrl(url){ try{ localStorage.setItem("sheetsUrl", url); }catch(e){} }
+
+async function fetchFromSheet(params){
+  const base = getSheetsUrl();
+  if(!base) return null;
+  try{
+    const qs = new URLSearchParams(params).toString();
+    const res = await fetch(`${base}?${qs}`);
+    if(!res.ok) return null;
+    return await res.json();
+  }catch(e){ return null; }
+}
+async function postToSheet(record){
+  const base = getSheetsUrl();
+  if(!base) return false;
+  try{
+    const res = await fetch(base, { method:"POST", headers:{ "Content-Type":"text/plain;charset=utf-8" }, body: JSON.stringify(record) });
+    return res.ok;
+  }catch(e){ return false; }
+}
+
+// ---------- storage ----------
+const hasCloudStorage = (typeof window.storage !== "undefined" && !!window.storage);
+
+async function loadAttendance(dateKey){
+  const key = `absensi:${dateKey}`;
+  try{ const local = localStorage.getItem(key); if(local) return JSON.parse(local); }catch(e){}
+  if(hasCloudStorage){
+    try{ const res = await window.storage.get(key, false); return res && res.value ? JSON.parse(res.value) : {}; }catch(e){}
+  }
+  return {};
+}
+async function saveAttendance(dateKey, data){
+  const key = `absensi:${dateKey}`;
+  let localOk = false;
+  try{ localStorage.setItem(key, JSON.stringify(data)); localOk = true; }catch(e){ console.error("Gagal menyimpan lokal:", e); }
+  if(hasCloudStorage){ try{ await window.storage.set(key, JSON.stringify(data), false); }catch(e){} }
+  return localOk;
+}
+async function listDateKeys(prefix){
+  const keys = [];
+  try{ for(let i=0;i<localStorage.length;i++){ const k = localStorage.key(i); if(k && k.startsWith(prefix)) keys.push(k); } }catch(e){}
+  if(hasCloudStorage){
+    try{
+      const res = await window.storage.list(prefix, false);
+      (res && res.keys ? res.keys : []).forEach(k=>{ if(!keys.includes(k)) keys.push(k); });
+    }catch(e){}
+  }
+  return keys;
+}
+
+// ---------- cuaca & kualitas udara (Barabai) ----------
+async function loadWeatherWidget(){
+  const el = document.getElementById("weatherWidget");
+  if(!el) return;
+  let tempCard = "";
+  try{
+    const wRes = await fetch("https://api.open-meteo.com/v1/forecast?latitude=-2.583&longitude=115.383&current=temperature_2m,relative_humidity_2m,apparent_temperature&timezone=Asia%2FMakassar");
+    const w = await wRes.json();
+    const temp = Math.round(w.current.temperature_2m);
+    const feels = Math.round(w.current.apparent_temperature);
+    const hum = Math.round(w.current.relative_humidity_2m);
+    tempCard = `
+      <div class="stat-card" style="background:${STATUS_HEX.izin}"><span class="n">${temp}°C</span><span class="l">Suhu Udara</span></div>
+      <div class="stat-card" style="background:${STATUS_HEX.sakit}"><span class="n">${feels}°C</span><span class="l">Terasa Seperti</span></div>
+      <div class="stat-card" style="background:${STATUS_HEX.hadir}"><span class="n">${hum}%</span><span class="l">Kelembapan</span></div>`;
+  }catch(e){}
+
+  let aqiCard = "";
+  try{
+    const res = await fetch("https://disdik.hstkab.go.id/udara-hst");
+    const html = await res.text();
+    const ispuMatch = html.match(/PANTAUAN ISPU:\s*<\/?\w*>?\s*(\d+)/i) || html.match(/(\d{1,3})\s*<\/?\w*>?\s*KATEGORI/i);
+    const kategoriMatch = html.match(/KATEGORI\s*<\/?\w*>?\s*([A-ZÀ-ÿ\s]+?)\s*\(PM/i);
+    if(ispuMatch){
+      const ispu = parseInt(ispuMatch[1], 10);
+      const kategori = kategoriMatch ? kategoriMatch[1].trim() : "";
+      let color = STATUS_HEX.hadir;
+      if(ispu > 300) color = "#7E0023";
+      else if(ispu > 200) color = "#8B2FC9";
+      else if(ispu > 100) color = STATUS_HEX.alpa;
+      else if(ispu > 50) color = "#D4C43C";
+      aqiCard = `<div class="stat-card" style="background:${color}"><span class="n">${ispu}</span><span class="l">ISPU HST${kategori ? ": "+kategori : ""}</span></div>`;
+    }
+  }catch(e){}
+
+  if(!aqiCard){
+    aqiCard = `<div class="stat-card" style="background:var(--muted); grid-column:1/-1;">
+      <span class="l">Data ISPU resmi tidak bisa diambil otomatis oleh browser.</span>
+      <a href="https://disdik.hstkab.go.id/udara-hst" target="_blank" rel="noopener" style="display:inline-block; margin-top:8px; color:#fff; font-weight:700; text-decoration:underline;">Buka Data Resmi Disdik HST →</a>
+    </div>`;
+  }
+
+  el.innerHTML = tempCard + aqiCard;
+  if(!tempCard && !aqiCard.includes("stat-card") ){
+    el.innerHTML = `<div class="stat-card" style="background:var(--muted); grid-column:1/-1;"><span class="l">Gagal memuat data cuaca. Cek koneksi internet perangkat.</span></div>`;
+  }
+}
+
+// ---------- grafik pai 3D kehadiran ----------
+function renderAttendancePie(counts, belum){
+  const pieEl = document.getElementById("attendancePie3d");
+  const legendEl = document.getElementById("attendancePieLegend");
+  if(!pieEl || !legendEl) return;
+
+  const categories = [
+    { label:"Hadir", value:counts.hadir, color:STATUS_HEX.hadir },
+    { label:"Izin", value:counts.izin, color:STATUS_HEX.izin },
+    { label:"Sakit", value:counts.sakit, color:STATUS_HEX.sakit },
+    { label:"Belum Absen", value:Math.max(belum,0), color:"#8A94A6" },
+  ];
+  const total = categories.reduce((s,c)=> s + c.value, 0);
+
+  legendEl.innerHTML = "";
+  if(total <= 0){
+    pieEl.style.background = "var(--line)";
+    pieEl.innerHTML = `<div class="pie3d-empty">Belum ada data hari ini</div>`;
+    return;
+  }
+  pieEl.innerHTML = "";
+
+  let acc = 0;
+  const stops = [];
+  categories.forEach(c=>{
+    if(c.value <= 0) return;
+    const start = (acc / total) * 360;
+    acc += c.value;
+    const end = (acc / total) * 360;
+    stops.push(`${c.color} ${start}deg ${end}deg`);
+  });
+  pieEl.style.background = `conic-gradient(${stops.join(", ")})`;
+
+  categories.filter(c=>c.value>0).forEach(c=>{
+    const item = document.createElement("div");
+    item.className = "pie3d-legend-item";
+    const pct = Math.round((c.value/total)*100);
+    item.innerHTML = `<span class="pie3d-legend-dot" style="background:${c.color}"></span>${c.label}: ${c.value} (${pct}%)`;
+    legendEl.appendChild(item);
+  });
+}
+
+// ---------- home dashboard ----------
+async function renderHome(){
+  document.getElementById("todayLabel").textContent = formatIndoDate(new Date());
+  const data = await loadAttendance(todayKey());
+  const sheetRows = await fetchFromSheet({ tanggal: todayKey() });
+  const merged = { ...data };
+  if(sheetRows) sheetRows.forEach(r=>{ if(STATUS[r.status]) merged[r.id] = r.status; });
+  const counts = { hadir:0, izin:0, sakit:0, alpa:0 };
+  STUDENTS.forEach(s=>{ const st = merged[s.id]; if(st) counts[st]++; });
+  const belum = STUDENTS.length - Object.keys(merged).length;
+
+  const el = document.getElementById("homeStats");
+  el.innerHTML = "";
+  const stats = [
+    { l:"Hadir hari ini", n:counts.hadir, c:STATUS_HEX.hadir },
+    { l:"Izin / Sakit", n:counts.izin+counts.sakit, c:"#8B6DE0" },
+    { l:"Alpa", n:counts.alpa, c:STATUS_HEX.alpa },
+    { l:"Belum absen", n:Math.max(belum,0), c:"#6C7A93" },
+  ];
+  stats.forEach(s=>{
+    const div = document.createElement("div");
+    div.className = "stat-card";
+    div.style.background = s.c;
+    div.innerHTML = `<span class="n">${s.n}</span><span class="l">${s.l}</span>`;
+    el.appendChild(div);
+  });
+  renderAttendancePie(counts, belum);
+  loadWeatherWidget();
+}
+
+// ---------- scan tab ----------
+async function refreshScanState(){
+  currentAttendance = await loadAttendance(todayKey());
+  renderProgress();
+  renderManualGrid();
+}
+function renderProgress(){
+  const doneCount = STUDENTS.filter(s=>currentAttendance[s.id]).length;
+  document.getElementById("progressCount").textContent = `${doneCount} / ${STUDENTS.length} sudah diabsen`;
+  const dots = document.getElementById("progressDots");
+  dots.innerHTML = "";
+  STUDENTS.forEach(s=>{
+    const d = document.createElement("div");
+    d.className = "dot";
+    const st = currentAttendance[s.id];
+    if(st){ d.style.background = STATUS_HEX[st]; d.textContent = s.name.split(" ").map(w=>w[0]).slice(0,2).join(""); }
+    else{ d.textContent = s.name[0]; }
+    d.title = s.name + (st ? ` — ${STATUS[st].label}` : "");
+    dots.appendChild(d);
+  });
+}
+function renderManualGrid(){
+  const grid = document.getElementById("manualGrid");
+  grid.innerHTML = "";
+  STUDENTS.forEach(s=>{
+    const b = document.createElement("button");
+    const st = currentAttendance[s.id];
+    b.textContent = st ? `${s.name} · ${STATUS[st].label}` : s.name;
+    if(st) b.classList.add("done");
+    b.addEventListener("click", ()=> openSheet(s.id));
+    grid.appendChild(b);
+  });
+}
+document.getElementById("manualToggle").addEventListener("click", ()=>{
+  const g = document.getElementById("manualGrid");
+  g.style.display = g.style.display === "grid" ? "none" : "grid";
+});
+document.getElementById("retryCamBtn").addEventListener("click", ()=>{
+  scannerStarted = false;
+  if(html5Qrcode){ try{ html5Qrcode.clear(); }catch(e){} }
+  startScanner();
+});
+
+function openSheet(studentId){
+  activeStudentId = studentId;
+  const s = STUDENTS.find(x=>x.id===studentId);
+  if(!s) return;
+  document.getElementById("sheetName").textContent = s.name;
+  const st = currentAttendance[studentId];
+  document.getElementById("sheetCurrent").textContent = st ? `Status saat ini: ${STATUS[st].label}` : "Belum diabsen hari ini";
+  document.getElementById("overlay").classList.add("show");
+}
+function closeSheet(){
+  document.getElementById("overlay").classList.remove("show");
+  activeStudentId = null;
+  if(html5Qrcode){ try{ html5Qrcode.resume(); }catch(e){} }
+}
+document.getElementById("sheetCancel").addEventListener("click", closeSheet);
+
+document.querySelectorAll(".status-btn").forEach(btn=>{
+  btn.addEventListener("click", async ()=>{
+    if(activeStudentId==null) return;
+    const status = btn.dataset.status;
+    const prevValue = currentAttendance[activeStudentId];
+    currentAttendance[activeStudentId] = status;
+    const s = STUDENTS.find(x=>x.id===activeStudentId);
+    const ok = await saveAttendance(todayKey(), currentAttendance);
+    if(ok){
+      showToast(`${s.name} — ${STATUS[status].label} tersimpan`);
+      postToSheet({ tanggal: todayKey(), id: activeStudentId, nama: s.name, status });
+    }else{
+      if(prevValue === undefined) delete currentAttendance[activeStudentId];
+      else currentAttendance[activeStudentId] = prevValue;
+      showToast("Gagal menyimpan, coba tap lagi.");
+    }
+    renderProgress();
+    renderManualGrid();
+    closeSheet();
+  });
+});
+
+function showToast(msg){
+  const t = document.getElementById("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  setTimeout(()=> t.classList.remove("show"), 1800);
+}
+
+// ---------- camera scanner ----------
+let isStartingScanner = false;
+let currentCameraId = null;
+const SCAN_CONFIG = {
+  fps: 30,
+  qrbox: (viewfinderWidth, viewfinderHeight) => {
+    const minEdge = Math.min(viewfinderWidth, viewfinderHeight);
+    const size = Math.max(200, Math.floor(minEdge * 0.9));
+    return { width: size, height: size };
+  },
+  disableFlip: false,
+  videoConstraints: {
+    width: { ideal: 1920 },
+    height: { ideal: 1080 },
+    advanced: [{ focusMode: "continuous" }]
+  }
+};
+if(typeof Html5QrcodeSupportedFormats !== "undefined"){
+  SCAN_CONFIG.formatsToSupport = [ Html5QrcodeSupportedFormats.QR_CODE ];
+}
+
+function isMobileDevice(){
+  if(navigator.userAgentData && typeof navigator.userAgentData.mobile === "boolean"){
+    return navigator.userAgentData.mobile;
+  }
+  return /Android|iPhone|iPad|iPod|Mobile|Windows Phone/i.test(navigator.userAgent);
+}
+
+function autoStartScanner(){
+  if(!cameraManuallyStopped) startScanner();
+}
+
+function startScanner(){
+  if(scannerStarted || isStartingScanner) return;
+  if(!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia){
+    showCamError({ name:"InsecureContext" });
+    return;
+  }
+  isStartingScanner = true;
+  document.getElementById("camError").style.display = "none";
+  const readerEl = document.getElementById("reader");
+  readerEl.innerHTML = "";
+  html5Qrcode = new Html5Qrcode("reader");
+  const mobile = isMobileDevice();
+
+  function startByEnumeration(){
+    Html5Qrcode.getCameras()
+      .then(cams=>{
+        if(!cams || !cams.length){ isStartingScanner = false; showCamError({ name:"NotFoundError" }); return; }
+        let cam = cams[0];
+        if(mobile){
+          cam = cams.find(c => /back|rear|environment/i.test(c.label))
+             || cams.find(c => !/front|user|face|selfie/i.test(c.label))
+             || cams[cams.length - 1];
+        }
+        currentCameraId = cam.id;
+        html5Qrcode.start(cam.id, SCAN_CONFIG, onScanSuccess, ()=>{})
+          .then(()=>{ scannerStarted = true; isStartingScanner = false; updateCamToggleBtn(); })
+          .catch(err=>{ isStartingScanner = false; showCamError(err); });
+      })
+      .catch(err=>{ isStartingScanner = false; showCamError(err); });
+  }
+
+  // Minta kamera belakang sebagai PREFERENSI (bukan syarat mutlak) — cara ini tidak pernah
+  // gagal karena mismatch kamera, browser akan otomatis memilih kamera terbaik yang tersedia.
+  const constraint = mobile ? { facingMode: "environment" } : true;
+  html5Qrcode.start(constraint, SCAN_CONFIG, onScanSuccess, ()=>{})
+    .then(()=>{ scannerStarted = true; isStartingScanner = false; updateCamToggleBtn(); })
+    .catch(()=> startByEnumeration());
+}
+function stopScanner(){
+  if(html5Qrcode && scannerStarted){
+    html5Qrcode.stop()
+      .then(()=> html5Qrcode.clear())
+      .catch(()=>{})
+      .then(()=>{ scannerStarted = false; updateCamToggleBtn(); });
+  }else{
+    updateCamToggleBtn();
+  }
+}
+
+// ---------- kamera Keluar Kelas (terpisah total dari kamera Scan Absen) ----------
+function startKeluarScanner(){
+  if(keluarScannerStarted || isStartingKeluarScanner) return;
+  if(!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia){
+    showKeluarCamError({ name:"InsecureContext" });
+    return;
+  }
+  isStartingKeluarScanner = true;
+  document.getElementById("camErrorKeluar").style.display = "none";
+  const readerEl = document.getElementById("readerKeluar");
+  readerEl.innerHTML = "";
+  html5QrcodeKeluar = new Html5Qrcode("readerKeluar");
+  const mobile = isMobileDevice();
+
+  function startByEnumeration(){
+    Html5Qrcode.getCameras()
+      .then(cams=>{
+        if(!cams || !cams.length){ isStartingKeluarScanner = false; showKeluarCamError({ name:"NotFoundError" }); return; }
+        let cam = cams[0];
+        if(mobile){
+          cam = cams.find(c => /back|rear|environment/i.test(c.label))
+             || cams.find(c => !/front|user|face|selfie/i.test(c.label))
+             || cams[cams.length - 1];
+        }
+        html5QrcodeKeluar.start(cam.id, SCAN_CONFIG, onKeluarScanSuccess, ()=>{})
+          .then(()=>{ keluarScannerStarted = true; isStartingKeluarScanner = false; })
+          .catch(err=>{ isStartingKeluarScanner = false; showKeluarCamError(err); });
+      })
+      .catch(err=>{ isStartingKeluarScanner = false; showKeluarCamError(err); });
+  }
+
+  const constraint = mobile ? { facingMode: "environment" } : true;
+  html5QrcodeKeluar.start(constraint, SCAN_CONFIG, onKeluarScanSuccess, ()=>{})
+    .then(()=>{ keluarScannerStarted = true; isStartingKeluarScanner = false; })
+    .catch(()=> startByEnumeration());
+}
+function stopKeluarScanner(){
+  if(html5QrcodeKeluar && keluarScannerStarted){
+    html5QrcodeKeluar.stop()
+      .then(()=> html5QrcodeKeluar.clear())
+      .catch(()=>{})
+      .then(()=>{ keluarScannerStarted = false; });
+  }
+}
+function showKeluarCamError(err){
+  let msg = "Kamera tidak bisa diakses. Gunakan pilihan manual di bawah, atau tap Coba Lagi.";
+  const name = err && err.name ? err.name : "";
+  if(name === "InsecureContext") msg = "Kamera butuh koneksi HTTPS.";
+  else if(name === "NotAllowedError") msg = "Izin kamera ditolak. Buka izin situs di pengaturan browser HP, lalu tap Coba Lagi.";
+  else if(name === "NotFoundError") msg = "Tidak ada kamera yang terdeteksi di perangkat ini.";
+  else if(name === "NotReadableError") msg = "Kamera sedang dipakai aplikasi lain. Tutup aplikasi kamera lain, lalu tap Coba Lagi.";
+  document.getElementById("camErrorMsgKeluar").textContent = msg;
+  document.getElementById("camErrorKeluar").style.display = "block";
+}
+document.getElementById("retryCamBtnKeluar").addEventListener("click", ()=>{
+  isStartingKeluarScanner = false;
+  startKeluarScanner();
+});
+function flashKeluarScan(){
+  const r = document.getElementById("readerKeluar");
+  if(!r) return;
+  r.classList.remove("flash");
+  requestAnimationFrame(()=>{
+    r.classList.add("flash");
+    setTimeout(()=> r.classList.remove("flash"), 600);
+  });
+}
+function onKeluarScanSuccess(decodedText){
+  flashKeluarScan();
+  if(!decodedText.startsWith(CODE_PREFIX)) return;
+  const id = parseInt(decodedText.replace(CODE_PREFIX,""), 10);
+  const s = STUDENTS.find(x=>x.id===id);
+  if(!s) return;
+  openLogSheet(id, s);
+}
+const hwScanInputKeluar = document.getElementById("hwScanInputKeluar");
+hwScanInputKeluar.addEventListener("keydown", (e)=>{
+  if(e.key === "Enter"){
+    e.preventDefault();
+    const val = hwScanInputKeluar.value.trim();
+    hwScanInputKeluar.value = "";
+    if(val) onKeluarScanSuccess(val);
+  }
+});
+
+// ---------- catatan keluar kelas ----------
+let logActive = null;
+function openLogSheet(id, s){
+  logActive = { id, s };
+  document.getElementById("logSheetName").textContent = s.name;
+  document.getElementById("logSheetMode").textContent = KELUAR_CONFIG.label;
+  const chipsWrap = document.getElementById("logPresetChips");
+  chipsWrap.innerHTML = "";
+  KELUAR_CONFIG.presets.forEach(p=>{
+    const chip = document.createElement("button");
+    chip.type = "button"; chip.className = "chip-btn"; chip.textContent = p;
+    chip.addEventListener("click", ()=>{ document.getElementById("logNoteInput").value = p === "Lainnya" ? "" : p; });
+    chipsWrap.appendChild(chip);
+  });
+  document.getElementById("logNoteInput").value = "";
+  document.getElementById("logOverlay").classList.add("show");
+}
+function closeLogSheet(){
+  document.getElementById("logOverlay").classList.remove("show");
+  logActive = null;
+}
+document.getElementById("logCancelBtn").addEventListener("click", closeLogSheet);
+document.getElementById("logSaveBtn").addEventListener("click", ()=>{
+  if(!logActive) return;
+  const { id, s } = logActive;
+  const note = document.getElementById("logNoteInput").value.trim();
+  saveLogEntry(id, s, note);
+  showToast(`${s.name} — ${KELUAR_CONFIG.label} tersimpan`);
+  closeLogSheet();
+});
+function saveLogEntry(id, s, note){
+  const now = new Date();
+  const uid = `${Date.now()}-${Math.random().toString(36).slice(2,8)}`;
+  const entry = { uid, tanggal: todayKey(), waktu: `${pad(now.getHours())}:${pad(now.getMinutes())}`, id, nama: s.name, keterangan: note };
+  const key = "log_keluar";
+  let list = [];
+  try{ list = JSON.parse(localStorage.getItem(key) || "[]"); }catch(e){}
+  list.push(entry);
+  try{ localStorage.setItem(key, JSON.stringify(list)); }catch(e){}
+  postToSheet({ jenis: KELUAR_CONFIG.jenis, tanggal: entry.tanggal, id, nama: s.name, keterangan: note });
+  renderLogToday("keluar");
+}
+function deleteLogEntry(mode, uid){
+  const key = `log_${mode}`;
+  let list = [];
+  try{ list = JSON.parse(localStorage.getItem(key) || "[]"); }catch(e){}
+  list = list.filter(e => e.uid !== uid);
+  try{ localStorage.setItem(key, JSON.stringify(list)); }catch(e){}
+  renderLogToday(mode);
+  showToast("Catatan dihapus");
+}
+function renderLogToday(mode){
+  const key = `log_${mode}`;
+  let list = [];
+  try{ list = JSON.parse(localStorage.getItem(key) || "[]"); }catch(e){}
+  const todays = list.filter(e=>e.tanggal===todayKey());
+  const tbody = document.getElementById(`logBody-${mode}`);
+  if(!tbody) return;
+  tbody.innerHTML = "";
+  todays.slice().reverse().forEach(e=>{
+    const tr = document.createElement("tr");
+    tr.innerHTML = `<td>${e.waktu}</td><td>${e.nama}</td><td>${e.keterangan || "-"}</td><td></td>`;
+    const delTd = tr.lastElementChild;
+    const delBtn = document.createElement("button");
+    delBtn.className = "btn-danger";
+    delBtn.textContent = "Hapus";
+    delBtn.addEventListener("click", ()=>{
+      if(confirm(`Hapus catatan ${e.nama} (${e.waktu})?`)) deleteLogEntry(mode, e.uid);
+    });
+    delTd.appendChild(delBtn);
+    tbody.appendChild(tr);
+  });
+}
+function populateManualSelect(mode){
+  const sel = document.getElementById(`manualSelect-${mode}`);
+  if(!sel) return;
+  sel.innerHTML = "";
+  STUDENTS.forEach(s=>{
+    const opt = document.createElement("option");
+    opt.value = s.id; opt.textContent = s.name;
+    sel.appendChild(opt);
+  });
+}
+const manualBtnKeluar = document.getElementById("manualBtn-keluar");
+if(manualBtnKeluar){
+  manualBtnKeluar.addEventListener("click", ()=>{
+    const sel = document.getElementById("manualSelect-keluar");
+    const id = parseInt(sel.value, 10);
+    const s = STUDENTS.find(x=>x.id===id);
+    if(s) openLogSheet(id, s);
+  });
+}
+function updateCamToggleBtn(){
+  const btn = document.getElementById("camToggleBtn");
+  if(btn) btn.textContent = scannerStarted ? "Matikan Kamera" : "Nyalakan Kamera";
+}
+document.getElementById("camToggleBtn").addEventListener("click", ()=>{
+  if(scannerStarted){ cameraManuallyStopped = true; stopScanner(); }
+  else{ cameraManuallyStopped = false; startScanner(); }
+});
+function updateHwToggleBtn(){
+  const btn = document.getElementById("hwToggleBtn");
+  const input = document.getElementById("hwScanInput");
+  if(btn) btn.textContent = hwScanEnabled ? "Matikan Scanner Fisik" : "Aktifkan Scanner Fisik";
+  if(input) input.disabled = !hwScanEnabled;
+}
+document.getElementById("hwToggleBtn").addEventListener("click", ()=>{
+  hwScanEnabled = !hwScanEnabled;
+  updateHwToggleBtn();
+  if(hwScanEnabled) document.getElementById("hwScanInput").focus();
+});
+function showCamError(err){
+  let msg = "Kamera tidak bisa diakses. Gunakan pilihan manual di bawah, atau tap Coba Lagi.";
+  const name = err && err.name ? err.name : "";
+  if(name === "InsecureContext") msg = "Kamera butuh koneksi HTTPS. Kalau file ini dibuka langsung dari komputer (file://), buka lewat link yang diberikan Claude, atau upload dulu ke hosting HTTPS.";
+  else if(name === "NoRearCamera") msg = "Kamera belakang tidak ditemukan di perangkat ini. Gunakan pilihan manual di bawah.";
+  else if(name === "NotAllowedError") msg = "Izin kamera ditolak. Buka izin situs di pengaturan browser HP, lalu tap Coba Lagi.";
+  else if(name === "NotFoundError") msg = "Tidak ada kamera yang terdeteksi di perangkat ini.";
+  else if(name === "NotReadableError") msg = "Kamera sedang dipakai aplikasi lain. Tutup aplikasi kamera lain, lalu tap Coba Lagi.";
+  else if(location.protocol !== "https:" && location.protocol !== "http:") msg = "Kamera hanya bisa diakses lewat HTTPS. Pastikan dibuka lewat link yang benar.";
+  document.getElementById("camErrorMsg").textContent = msg;
+  document.getElementById("camError").style.display = "block";
+  document.getElementById("manualGrid").style.display = "grid";
+}
+let lastWarnToast = 0;
+function warnToastThrottled(msg){
+  const now = Date.now();
+  if(now - lastWarnToast < 2000) return;
+  lastWarnToast = now;
+  showToast(msg);
+}
+function flashScan(){
+  const r = document.getElementById("reader");
+  if(!r) return;
+  r.classList.remove("flash");
+  requestAnimationFrame(()=>{
+    r.classList.add("flash");
+    setTimeout(()=> r.classList.remove("flash"), 600);
+  });
+}
+function onScanSuccess(decodedText){
+  flashScan();
+  if(!decodedText.startsWith(CODE_PREFIX)){
+    warnToastThrottled("Kode terbaca tapi bukan kartu siswa yang dikenali");
+    return;
+  }
+  const id = parseInt(decodedText.replace(CODE_PREFIX,""), 10);
+  const s = STUDENTS.find(x=>x.id===id);
+  if(!s){
+    warnToastThrottled("ID siswa pada kartu ini tidak ditemukan di daftar");
+    return;
+  }
+  if(currentAttendance[id]){
+    showToast(`${s.name} sudah tercatat: ${STATUS[currentAttendance[id]].label}`);
+    return;
+  }
+  quickMarkHadir(id, s);
+}
+
+// ---------- alat barcode scanner fisik (USB/Bluetooth, mis. Omni 2D) ----------
+const hwScanInput = document.getElementById("hwScanInput");
+hwScanInput.addEventListener("keydown", (e)=>{
+  if(e.key === "Enter"){
+    e.preventDefault();
+    const val = hwScanInput.value.trim();
+    hwScanInput.value = "";
+    if(val) onScanSuccess(val);
+  }
+});
+// ---------- bunyi bip ala mesin scan kasir ----------
+let audioCtx = null;
+function getAudioCtx(){
+  if(!audioCtx){
+    try{ audioCtx = new (window.AudioContext || window.webkitAudioContext)(); }
+    catch(e){ return null; }
+  }
+  if(audioCtx.state === "suspended"){ audioCtx.resume().catch(()=>{}); }
+  return audioCtx;
+}
+function playBeep(){
+  const ctx = getAudioCtx();
+  if(!ctx) return;
+  try{
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = "sine";
+    osc.frequency.value = 1568;
+    gain.gain.setValueAtTime(0.35, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.18);
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start();
+    osc.stop(ctx.currentTime + 0.18);
+  }catch(e){}
+}
+
+async function quickMarkHadir(id, s){
+  currentAttendance[id] = "hadir";
+  const ok = await saveAttendance(todayKey(), currentAttendance);
+  if(ok){
+    playBeep();
+    showToast(`${s.name} — Hadir tersimpan`);
+    postToSheet({ tanggal: todayKey(), id, nama: s.name, status:"hadir" });
+  }else{
+    delete currentAttendance[id];
+    showToast("Gagal menyimpan, coba scan ulang");
+  }
+  renderProgress();
+  renderManualGrid();
+}
+
+// ---------- QR cards ----------
+function buildQrGrids(){
+  const grid = document.getElementById("qrGrid");
+  const gridPrint = document.getElementById("qrGridPrint");
+  grid.innerHTML = "";
+  gridPrint.innerHTML = "";
+  STUDENTS.forEach(s=>{
+    [grid, gridPrint].forEach(target=>{
+      const card = document.createElement("div");
+      card.className = "qr-card";
+      const qbox = document.createElement("div");
+      qbox.className = "qbox";
+      card.appendChild(qbox);
+      const nm = document.createElement("div");
+      nm.className = "sname"; nm.textContent = s.name;
+      card.appendChild(nm);
+      const num = document.createElement("div");
+      num.className = "snum"; num.textContent = `No. ${s.id}`;
+      card.appendChild(num);
+      target.appendChild(card);
+      new QRCode(qbox, { text: CODE_PREFIX + s.id, width:160, height:160, colorDark:"#000000", colorLight:"#ffffff", correctLevel: QRCode.CorrectLevel.H });
+    });
+  });
+}
+document.getElementById("printBtn").addEventListener("click", ()=> window.print());
+
+// ---------- siswa (kelola) ----------
+function renderStudentManageList(){
+  document.getElementById("studentCount").textContent = STUDENTS.length;
+  const wrap = document.getElementById("studentListManage");
+  wrap.innerHTML = "";
+  STUDENTS.forEach((s,i)=>{
+    const row = document.createElement("div");
+    row.className = "student-row";
+    row.innerHTML = `<span class="sidx">${i+1}.</span><span class="sname">${s.name}</span>`;
+    const delBtn = document.createElement("button");
+    delBtn.className = "btn-danger";
+    delBtn.textContent = "Hapus";
+    delBtn.addEventListener("click", ()=>{
+      if(confirm(`Hapus ${s.name} dari daftar siswa?`)) deleteStudent(s.id);
+    });
+    row.appendChild(delBtn);
+    wrap.appendChild(row);
+  });
+}
+document.getElementById("addStudentBtn").addEventListener("click", ()=>{
+  const input = document.getElementById("newStudentName");
+  if(!input.value.trim()){ showToast("Nama siswa belum diisi"); return; }
+  addStudent(input.value);
+  showToast(`${input.value.trim()} ditambahkan`);
+  input.value = "";
+});
+
+// ---------- recap ----------
+let lastDailyData = {};
+let lastDailyTimes = {};
+let lastDailyDateKey = "";
+async function renderRecap(dateKey){
+  let data = await loadAttendance(dateKey);
+  let times = {};
+  const sheetRows = await fetchFromSheet({ tanggal: dateKey });
+  if(sheetRows){
+    const merged = {};
+    sheetRows.forEach(r=>{ if(STATUS[r.status]){ merged[r.id] = r.status; times[r.id] = r.waktu || ""; } });
+    data = { ...data, ...merged };
+  }
+  lastDailyData = data; lastDailyTimes = times; lastDailyDateKey = dateKey;
+
+  const counts = { hadir:0, izin:0, sakit:0, alpa:0 };
+  STUDENTS.forEach(s=>{ const st = data[s.id]; if(st) counts[st]++; });
+  const belum = STUDENTS.length - Object.keys(data).length;
+
+  const summary = document.getElementById("summaryRow");
+  summary.innerHTML = "";
+  [
+    {l:"Hadir", n:counts.hadir, c:STATUS_HEX.hadir},
+    {l:"Izin", n:counts.izin, c:STATUS_HEX.izin},
+    {l:"Sakit", n:counts.sakit, c:STATUS_HEX.sakit},
+    {l:"Alpa", n:counts.alpa, c:STATUS_HEX.alpa},
+    {l:"Belum", n:Math.max(belum,0), c:"#8A94A6"},
+  ].forEach(ch=>{
+    const div = document.createElement("div");
+    div.className = "sum-chip"; div.style.background = ch.c;
+    div.innerHTML = `<span class="n">${ch.n}</span><span class="l">${ch.l}</span>`;
+    summary.appendChild(div);
+  });
+
+  const body = document.getElementById("recapBody");
+  body.innerHTML = "";
+  STUDENTS.forEach((s,i)=>{
+    const st = data[s.id];
+    const tr = document.createElement("tr");
+    tr.innerHTML = `<td>${i+1}</td><td>${s.name}</td><td>${
+      st ? `<span class="badge" style="background:${STATUS_HEX[st]}">${STATUS[st].label}</span>`
+         : `<span class="badge" style="background:var(--badge-muted)">Belum absen</span>`
+    }</td><td>${times[s.id] || "-"}</td>`;
+    body.appendChild(tr);
+  });
+}
+
+// ---------- monthly recap ----------
+let lastMonthlyPerStudent = {};
+let lastMonthlyKey = "";
+async function renderMonthlyRecap(monthKey){
+  lastMonthlyKey = monthKey;
+  const body = document.getElementById("monthlyBody");
+  const summary = document.getElementById("monthlySummaryRow");
+  const meta = document.getElementById("monthlyMeta");
+  body.innerHTML = ""; summary.innerHTML = ""; meta.textContent = "Memuat data bulan ini...";
+
+  let dayKeys = [];
+  try{
+    const allKeys = await listDateKeys("absensi:");
+    dayKeys = allKeys.filter(k => k.slice(8,15) === monthKey);
+  }catch(e){ dayKeys = []; }
+
+  const perStudent = {};
+  STUDENTS.forEach(s => perStudent[s.id] = { hadir:0, izin:0, sakit:0, alpa:0 });
+  const totals = { hadir:0, izin:0, sakit:0, alpa:0 };
+
+  for(const key of dayKeys){
+    try{
+      let data = {};
+      const local = localStorage.getItem(key);
+      if(local){ data = JSON.parse(local); }
+      else if(hasCloudStorage){
+        const res = await window.storage.get(key, false);
+        data = res && res.value ? JSON.parse(res.value) : {};
+      }
+      Object.keys(data).forEach(id=>{
+        const st = data[id];
+        if(perStudent[id] && STATUS[st]){ perStudent[id][st]++; totals[st]++; }
+      });
+    }catch(e){}
+  }
+
+  const sheetRows = await fetchFromSheet({ bulan: monthKey });
+  if(sheetRows){
+    const perDay = {};
+    sheetRows.forEach(r=>{
+      if(!STATUS[r.status]) return;
+      perDay[r.tanggal] = perDay[r.tanggal] || {};
+      perDay[r.tanggal][r.id] = r.status;
+    });
+    if(Object.keys(perDay).length){
+      STUDENTS.forEach(s => perStudent[s.id] = { hadir:0, izin:0, sakit:0, alpa:0 });
+      totals.hadir = totals.izin = totals.sakit = totals.alpa = 0;
+      Object.keys(perDay).forEach(day=>{
+        Object.keys(perDay[day]).forEach(id=>{
+          const st = perDay[day][id];
+          if(perStudent[id]){ perStudent[id][st]++; totals[st]++; }
+        });
+      });
+    }
+  }
+
+  meta.textContent = dayKeys.length ? `${dayKeys.length} hari absen tercatat pada bulan ini` : "Belum ada absen tercatat pada bulan ini";
+  lastMonthlyPerStudent = perStudent;
+
+  [
+    {l:"Hadir", n:totals.hadir, c:STATUS_HEX.hadir},
+    {l:"Izin", n:totals.izin, c:STATUS_HEX.izin},
+    {l:"Sakit", n:totals.sakit, c:STATUS_HEX.sakit},
+    {l:"Alpa", n:totals.alpa, c:STATUS_HEX.alpa},
+  ].forEach(ch=>{
+    const div = document.createElement("div");
+    div.className = "sum-chip"; div.style.background = ch.c;
+    div.innerHTML = `<span class="n">${ch.n}</span><span class="l">${ch.l}</span>`;
+    summary.appendChild(div);
+  });
+
+  STUDENTS.forEach((s,i)=>{
+    const c = perStudent[s.id];
+    const tr = document.createElement("tr");
+    tr.innerHTML = `<td>${i+1}</td><td>${s.name}</td><td>${c.hadir}</td><td>${c.izin}</td><td>${c.sakit}</td><td>${c.alpa}</td>`;
+    body.appendChild(tr);
+  });
+}
+
+// ---------- download CSV ----------
+function downloadCSV(filename, csvContent){
+  const blob = new Blob(["\ufeff" + csvContent], { type:"text/csv;charset=utf-8;" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob); link.download = filename;
+  document.body.appendChild(link); link.click(); document.body.removeChild(link);
+}
+function formatTanggalIndo(dateKey){
+  if(!dateKey) return "-";
+  const parts = dateKey.split("-");
+  if(parts.length !== 3) return dateKey;
+  const d = new Date(`${dateKey}T00:00:00`);
+  const hariNames = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
+  return `${hariNames[d.getDay()]}, ${parseInt(parts[2],10)} ${BULAN_NAMES[parseInt(parts[1],10)-1]} ${parts[0]}`;
+}
+function formatBulanIndo(monthKey){
+  if(!monthKey) return "-";
+  const parts = monthKey.split("-");
+  if(parts.length !== 2) return monthKey;
+  return `${BULAN_NAMES[parseInt(parts[1],10)-1]} ${parts[0]}`;
+}
+document.getElementById("downloadDailyBtn").addEventListener("click", ()=>{
+  let csv = "Rekap Absensi Harian - Kelas 3 SD Negeri 1 Barabai Timur\n";
+  csv += `Tanggal,${formatTanggalIndo(lastDailyDateKey)}\n`;
+  csv += "\n";
+  csv += "No,Nama,Status,Waktu\n";
+  STUDENTS.forEach((s,i)=>{
+    const st = lastDailyData[s.id];
+    csv += `${i+1},"${s.name}",${st ? STATUS[st].label : "Belum absen"},${lastDailyTimes[s.id] || "-"}\n`;
+  });
+  downloadCSV(`Absensi_Kelas3_${lastDailyDateKey}.csv`, csv);
+});
+document.getElementById("downloadMonthlyBtn").addEventListener("click", ()=>{
+  let csv = "Rekap Absensi Bulanan - Kelas 3 SD Negeri 1 Barabai Timur\n";
+  csv += `Bulan,${formatBulanIndo(lastMonthlyKey)}\n`;
+  csv += "\n";
+  csv += "No,Nama,Hadir,Izin,Sakit,Alpa\n";
+  STUDENTS.forEach((s,i)=>{
+    const c = lastMonthlyPerStudent[s.id] || { hadir:0, izin:0, sakit:0, alpa:0 };
+    csv += `${i+1},"${s.name}",${c.hadir},${c.izin},${c.sakit},${c.alpa}\n`;
+  });
+  downloadCSV(`Rekap_Bulanan_Kelas3_${lastMonthlyKey}.csv`, csv);
+});
+
+// ---------- settings ----------
+function updateSheetsStatusLabel(){
+  const url = getSheetsUrl();
+  document.getElementById("sheetsStatus").textContent = url ? `Terhubung ke: ${url}` : "Belum terhubung — absen hanya tersimpan di perangkat ini.";
+}
+document.getElementById("sheetsUrlInput").value = getSheetsUrl();
+updateSheetsStatusLabel();
+document.getElementById("saveSheetsUrlBtn").addEventListener("click", ()=>{
+  const val = document.getElementById("sheetsUrlInput").value.trim();
+  setSheetsUrl(val);
+  updateSheetsStatusLabel();
+  showToast(val ? "Terhubung ke Google Sheets" : "Koneksi Google Sheets dihapus");
+});
+
+// ---------- logo aplikasi ----------
+function applyLogo(){
+  let logo = "";
+  try{ logo = localStorage.getItem("customLogo") || ""; }catch(e){}
+  document.querySelectorAll(".sidebar-profile .avatar").forEach(el=>{
+    el.innerHTML = logo ? `<img src="${logo}" style="width:100%;height:100%;border-radius:50%;object-fit:cover;">` : "👤";
+  });
+  const preview = document.getElementById("logoPreview");
+  if(preview){
+    if(logo){ preview.src = logo; preview.style.display = "inline-block"; }
+    else{ preview.style.display = "none"; }
+  }
+}
+document.getElementById("logoFileInput").addEventListener("change", (e)=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = ()=>{
+    try{
+      localStorage.setItem("customLogo", reader.result);
+      applyLogo();
+      showToast("Logo diperbarui");
+    }catch(err){ showToast("Gagal menyimpan logo (ukuran file mungkin terlalu besar)"); }
+  };
+  reader.readAsDataURL(file);
+});
+document.getElementById("resetLogoBtn").addEventListener("click", ()=>{
+  try{ localStorage.removeItem("customLogo"); }catch(e){}
+  applyLogo();
+  showToast("Logo dikembalikan ke default");
+});
+applyLogo();
+
+// ---------- theme ----------
+function applyTheme(theme){
+  document.body.classList.toggle("theme-light", theme === "light");
+  document.body.classList.toggle("theme-pastel", theme === "pastel");
+  document.body.classList.toggle("theme-modern", theme === "modern");
+  document.getElementById("themeDarkBtn").classList.toggle("inactive", theme !== "dark");
+  document.getElementById("themeLightBtn").classList.toggle("inactive", theme !== "light");
+  document.getElementById("themePastelBtn").classList.toggle("inactive", theme !== "pastel");
+  document.getElementById("themeModernBtn").classList.toggle("inactive", theme !== "modern");
+  try{ localStorage.setItem("themePreference", theme); }catch(e){}
+}
+function loadThemePreference(){
+  try{ return localStorage.getItem("themePreference") || "dark"; }catch(e){ return "dark"; }
+}
+document.getElementById("themeDarkBtn").addEventListener("click", ()=> applyTheme("dark"));
+document.getElementById("themeLightBtn").addEventListener("click", ()=> applyTheme("light"));
+document.getElementById("themePastelBtn").addEventListener("click", ()=> applyTheme("pastel"));
+document.getElementById("themeModernBtn").addEventListener("click", ()=> applyTheme("modern"));
+applyTheme(loadThemePreference());
+
+// ---------- init ----------
+document.getElementById("recapDate").value = todayKey();
+document.getElementById("recapDate").addEventListener("change", (e)=> renderRecap(e.target.value));
+document.getElementById("monthlyDate").value = todayKey().slice(0,7);
+document.getElementById("monthlyDate").addEventListener("change", (e)=> renderMonthlyRecap(e.target.value));
+tickClock();
+setInterval(tickClock, 1000);
+
+async function safeStep(name, fn){
+  try{ await fn(); }
+  catch(err){ console.error(`Gagal inisialisasi: ${name}`, err); }
+}
+async function initApp(){
+  await safeStep("refreshScanState", refreshScanState);
+  await safeStep("buildQrGrids", buildQrGrids);
+  await safeStep("renderStudentManageList", renderStudentManageList);
+  await safeStep("renderHome", renderHome);
+  await safeStep("initCalendar", initCalendar);
+  await safeStep("updateCamToggleBtn", updateCamToggleBtn);
+  await safeStep("updateHwToggleBtn", updateHwToggleBtn);
+  await safeStep("populateManualSelect-keluar", ()=>populateManualSelect("keluar"));
+  await safeStep("renderLogToday-keluar", ()=>renderLogToday("keluar"));
+}
+initApp();
+} catch(err) {
+  console.error("Aplikasi gagal memuat sepenuhnya:", err);
+  const banner = document.createElement("div");
+  banner.style.cssText = "position:fixed;top:0;left:0;right:0;background:#B33939;color:#fff;padding:10px 14px;font-size:12px;z-index:9999;font-family:monospace;";
+  banner.textContent = "Ada bagian aplikasi yang gagal memuat: " + (err && err.message ? err.message : err);
+  document.body.appendChild(banner);
+}
+</script>
+</body>
+</html>
